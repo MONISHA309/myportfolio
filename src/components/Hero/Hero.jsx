@@ -84,7 +84,7 @@ const Hero = () => {
 
         {/* CENTER */}
         <div className="hero-center">
-          <img src={myImage} alt="portrait" className="hero-image" />
+          <img src={myImage} alt="portrait" className="hero-image" loading="lazy"/>
           <div className="hero-bottom-fade"></div>
         </div>
 

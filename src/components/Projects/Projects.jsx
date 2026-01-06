@@ -122,7 +122,7 @@ const Projects = () => {
                 className={`project-image-wrapper ${isLeft ? "img-left" : "img-right"} ${show ? "show-img" : ""
                   }`}
               >
-                <img src={proj.img} alt="" className="project-image" />
+                <img src={proj.img} alt="" className="project-image" loading="lazy" />
               </div>
 
               {/* TEXT */}

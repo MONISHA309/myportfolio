@@ -46,7 +46,7 @@ const About = () => {
       <div className="about-about-container">
 
         <div className={`about-seq ${step >= 2 ? "about-fade-up" : ""}`}>
-          <img src={sampleImg} alt="profile" className="about-about-img" />
+          <img src={sampleImg} alt="profile" className="about-about-img" loading="lazy"/>
         </div>
 
         <div className="about-about-right">
