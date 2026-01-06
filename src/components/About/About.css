@@ -1,0 +1,299 @@
+/* GLOBAL RESET stays unchanged */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* SECTION */
+.about-about-section {
+  width: 100%;
+  /* padding: 6rem 0; */
+  background: #0c0c0c;
+  color: #fff;
+}
+
+/* TITLE */
+.about-about-title-wrapper {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.about-about-main-title {
+  font-size: 4rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+/* GRID */
+.about-about-container {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 3rem;
+  width: 88%;
+  margin: auto;
+}
+
+/* IMAGE */
+.about-about-img {
+  width: 440px;
+  /* height: 510px; */
+  border-radius: 12px;
+  object-fit: cover;
+  display: block;
+  margin-top: -40px;
+  filter: drop-shadow(1px 1px 20px #d1b48c);
+}
+
+/* RIGHT CONTENT */
+.about-about-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-about-me {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.about-about-text {
+  font-size: 1rem;
+  line-height: 1.7;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 2s ease;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+/* DETAILS GRID */
+.about-about-details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem 1.5rem;
+  margin-top: 1rem;
+}
+
+.about-detail-box {
+  background: #1a1a1a;
+  padding: 1.4rem;
+  border-left: 4px solid #d1b48c;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #e6d3b1;
+  display: block;
+  text-decoration: none;
+}
+
+.about-detail-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: #d1b48c;
+  transition: width 0.35s ease;
+  z-index: 0;
+}
+
+.about-detail-box:hover::before {
+  width: 100%;
+}
+
+.about-detail-box * {
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease;
+}
+
+.about-detail-box:hover * {
+  color: #000;
+}
+
+/* LINK SPECIFIC STYLES */
+.about-detail-link {
+  /* Inherits all styles from .about-detail-box */
+  cursor: pointer;
+}
+
+/* BUTTON */
+.about-about-cv-btn {
+  padding: 10px 26px;
+  font-size: 0.9rem;
+  width: auto;
+  margin-top: 2rem;
+  align-self: flex-start;
+  background: #d1b48c;
+  border: none;
+  border-radius: 4px;
+  color: #0c0c0c;
+  font-weight: 600;
+  transition: 0.3s ease;
+  border: 2px solid #d1b48c;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.about-about-cv-btn:hover {
+  background: #0c0c0c;
+  border: 2px solid #d1b48c;
+  color: #d1b48c;
+}
+
+/* ANIMATION */
+.about-seq {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.about-fade-up {
+  animation: about-fadeUp 1.2s ease forwards;
+}
+
+@keyframes about-fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========== RESPONSIVE BREAKPOINTS ========== */
+
+/* 1024px - Tablet Landscape */
+@media (max-width: 1024px) {
+  .about-about-container {
+    width: 90%;
+    gap: 2.5rem;
+  }
+
+  .about-about-img {
+    width: 400px;
+    margin-top: 0;
+  }
+
+  .about-about-main-title {
+    font-size: 3.2rem;
+  }
+
+  .about-about-me {
+    font-size: 1.8rem;
+  }
+}
+
+/* 768px - Tablet Portrait */
+@media (max-width: 768px) {
+  .about-about-section {
+    padding: 4rem 0;
+  }
+
+  .about-about-title-wrapper {
+    margin-bottom: 3rem;
+  }
+
+  .about-about-main-title {
+    font-size: 2.8rem;
+  }
+
+  .about-about-container {
+    width: 90%;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .about-about-img {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .about-about-right {
+    text-align: center;
+    align-items: center;
+  }
+
+  .about-about-cv-btn {
+    align-self: center;
+  }
+
+  .about-about-details-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .about-detail-box {
+    padding: 1.2rem;
+  }
+}
+
+/* 480px - Mobile Landscape */
+@media (max-width: 480px) {
+  .about-about-section {
+    padding: 3rem 0;
+  }
+
+  .about-about-main-title {
+    font-size: 2.4rem;
+  }
+
+  .about-about-container {
+    width: 92%;
+    gap: 2rem;
+  }
+
+  .about-about-me {
+    font-size: 1.6rem;
+  }
+
+  .about-about-text {
+    font-size: 0.95rem;
+  }
+
+  .about-about-details-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .about-about-cv-btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* 375px - Mobile Portrait */
+@media (max-width: 375px) {
+  .about-about-section {
+    padding: 2.5rem 0;
+  }
+
+  .about-about-main-title {
+    font-size: 2rem;
+  }
+
+  .about-about-container {
+    width: 94%;
+  }
+
+  .about-about-me {
+    font-size: 1.4rem;
+  }
+
+  .about-about-text {
+    font-size: 0.9rem;
+  }
+
+  .about-detail-box {
+    padding: 1rem;
+  }
+
+  .about-about-cv-btn {
+    padding: 0.7rem 1.3rem;
+    font-size: 0.8rem;
+  }
+}

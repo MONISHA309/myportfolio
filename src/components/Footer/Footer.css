@@ -1,0 +1,195 @@
+/* ROOT */
+.footerRoot {
+  width: 100%;
+  background: #0c0c0c;
+  color: #e6d3b1;
+}
+
+/* GRADIENT SEPARATOR */
+.footerGradientDivider {
+  width: 88%;
+  max-width: 1100px;
+  height: 1px;
+  margin: 0 auto 3rem;
+
+  background: linear-gradient(90deg,
+      rgba(209, 180, 140, 0) 0%,
+      rgba(209, 180, 140, 0.7) 50%,
+      rgba(209, 180, 140, 0) 100%);
+
+  box-shadow: 0 0 14px rgba(209, 180, 140, 0.3);
+}
+
+/* INNER WRAP */
+.footerInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+/* QUOTE */
+.footerQuote {
+  font-size: 1.05rem;
+  opacity: 0;
+  transform: translateY(16px);
+  letter-spacing: 0.4px;
+}
+
+/* BUILT WITH */
+.footerBuilt {
+  font-size: 0.9rem;
+  opacity: 0;
+  transform: translateY(16px);
+  color: #b9a68d;
+}
+
+.footerBuilt span {
+  color: #d1b48c;
+  font-weight: 600;
+}
+
+/* ICONS */
+.footerIcons {
+  display: flex;
+  gap: 1.6rem;
+  margin-top: 0.6rem;
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.footerIcon {
+  font-size: 1.3rem;
+  color: #d1b48c;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footerIcon:hover {
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
+/* ===== SEQUENTIAL FADE UP ===== */
+.footerFade1 {
+  animation: footerFadeUp 0.9s ease forwards;
+}
+
+.footerFade2 {
+  animation: footerFadeUp 0.9s ease forwards;
+  animation-delay: 0.2s;
+}
+
+.footerFade3 {
+  animation: footerFadeUp 0.9s ease forwards;
+  animation-delay: 0.4s;
+}
+
+@keyframes footerFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========== RESPONSIVE BREAKPOINTS ========== */
+
+/* 1024px - Tablet Landscape */
+@media (max-width: 1024px) {
+
+
+  .footerGradientDivider {
+    width: 90%;
+  }
+
+  .footerQuote {
+    font-size: 1rem;
+    text-align: center;
+    padding: 0 20px;
+  }
+}
+
+/* 768px - Tablet Portrait */
+@media (max-width: 768px) {
+
+  .footerGradientDivider {
+    width: 92%;
+    margin-bottom: 2.5rem;
+  }
+
+  .footerQuote {
+    font-size: 0.95rem;
+    padding: 0 30px;
+    line-height: 1.5;
+  }
+
+  .footerBuilt {
+    font-size: 0.85rem;
+  }
+
+  .footerIcons {
+    gap: 1.4rem;
+  }
+
+  .footerIcon {
+    font-size: 1.2rem;
+  }
+}
+
+/* 480px - Mobile Landscape */
+@media (max-width: 480px) {
+
+
+  .footerGradientDivider {
+    width: 94%;
+    margin-bottom: 2rem;
+  }
+
+  .footerInner {
+    gap: 1rem;
+  }
+
+  .footerQuote {
+    font-size: 0.9rem;
+    padding: 0 20px;
+  }
+
+  .footerBuilt {
+    font-size: 0.8rem;
+  }
+
+  .footerIcons {
+    gap: 1.2rem;
+    margin-top: 0.5rem;
+  }
+
+  .footerIcon {
+    font-size: 1.1rem;
+  }
+}
+
+/* 375px - Mobile Portrait */
+@media (max-width: 375px) {
+
+
+  .footerGradientDivider {
+    width: 96%;
+    margin-bottom: 1.8rem;
+  }
+
+  .footerQuote {
+    font-size: 0.85rem;
+    padding: 0 15px;
+  }
+
+  .footerBuilt {
+    font-size: 0.75rem;
+  }
+
+  .footerIcons {
+    gap: 1rem;
+  }
+
+  .footerIcon {
+    font-size: 1rem;
+  }
+}

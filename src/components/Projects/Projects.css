@@ -1,0 +1,348 @@
+.projects-section {
+    width: 100%;
+    background: #1a1917;
+    padding: 6rem 0;
+    border-radius: 60px;
+    margin-top: 3rem;
+    overflow: hidden;
+    /* Prevent horizontal scroll */
+}
+
+/* Heading */
+.projects-heading {
+    text-align: center;
+    margin-bottom: 5rem;
+    width: 88%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+}
+
+
+.projects-main {
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: white;
+}
+
+/* Fade heading */
+.fade-heading {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: 1.2s ease;
+}
+
+.fade-heading.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* List Container */
+.projects-list {
+    width: 88%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+    padding: 0 20px;
+}
+
+/* Each Block */
+.project-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4rem;
+    min-height: 400px;
+    /* Prevent height collapse */
+}
+
+.project-block.reverse {
+    flex-direction: row-reverse;
+}
+
+/* IMAGE */
+.project-image-wrapper {
+    width: 45%;
+    flex-shrink: 0;
+    opacity: 0;
+    transition: opacity 1s ease, transform 1s ease;
+    position: relative;
+    overflow: hidden; /* Crop images that overflow the container */
+    border-radius: 25px; /* Match image border radius */
+    height: 350px; /* FIXED HEIGHT for all images */
+}
+
+
+/* Desktop inward animation - with safe boundaries */
+.img-left {
+    transform: translateX(-80px);
+}
+
+.img-right {
+    transform: translateX(80px);
+}
+
+/* Show image animation */
+.show-img {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.project-image {
+    width: 100%;
+    height: 100%; /* Take full height of container */
+    border-radius: 25px;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.15);
+    object-fit: cover; /* This is KEY - crops and maintains aspect ratio */
+    object-position: center; /* Center the image within the container */
+    display: block; /* Remove extra space under image */
+}
+
+/* TEXT */
+.project-text {
+    color: white;
+    width: 50%;
+    padding-left: 0;
+    /* Remove fixed padding */
+}
+
+/* Spacing between elements */
+.project-text>* {
+    margin-bottom: 1.5rem;
+}
+
+.project-text>*:last-child {
+    margin-bottom: 0;
+}
+
+/* Text Styling */
+.project-tag {
+    font-size: 1.2rem;
+    color: #d1b48c;
+    opacity: 0;
+}
+
+.project-title {
+    font-size: 3rem;
+    font-weight: 700;
+    opacity: 0;
+}
+
+.project-desc {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #c7c7c7;
+    max-width: 100%;
+    opacity: 0;
+}
+
+.project-link {
+    color: #d1b48c;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1.2rem;
+    opacity: 0;
+}
+
+/* Fade Up */
+.fade-text {
+    animation: fadeUpSlow 1s ease forwards;
+}
+
+.delay-1 {
+    animation-delay: 0.15s;
+}
+
+.delay-2 {
+    animation-delay: 0.3s;
+}
+
+.delay-3 {
+    animation-delay: 0.45s;
+}
+
+@keyframes fadeUpSlow {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========== RESPONSIVE BREAKPOINTS ========== */
+
+/* 1024px - Tablet Landscape */
+@media (max-width: 1024px) {
+    .projects-section {
+        border-radius: 40px;
+        padding: 5rem 0;
+    }
+
+    .project-image-wrapper {
+        height: 300px; /* Slightly smaller on tablets */
+    }
+
+    .projects-main {
+        font-size: 2.8rem;
+    }
+
+    .projects-list {
+        width: 90%;
+        gap: 5rem;
+    }
+
+    .project-block {
+        gap: 3rem;
+    }
+
+    .project-title {
+        font-size: 2.5rem;
+    }
+
+    .img-left {
+        transform: translateX(-50px);
+    }
+
+    .img-right {
+        transform: translateX(50px);
+    }
+}
+
+/* 768px - Tablet Portrait */
+@media (max-width: 768px) {
+    .projects-section {
+        border-radius: 30px;
+        padding: 4rem 0;
+        margin-top: 2rem;
+    }
+
+    .projects-heading {
+        width: 90%;
+        margin-bottom: 4rem;
+    }
+
+    .projects-main {
+        font-size: 2.4rem;
+    }
+
+    .projects-sub {
+        font-size: 0.9rem;
+    }
+
+    .projects-list {
+        width: 90%;
+        gap: 4rem;
+    }
+
+    .project-block {
+        flex-direction: column;
+        text-align: center;
+        gap: 2.5rem;
+        min-height: auto;
+    }
+
+    .project-block.reverse {
+        flex-direction: column;
+    }
+
+    .project-image-wrapper,
+    .project-text {
+        width: 100%;
+    }
+
+    .project-image-wrapper {
+        transform: translateX(0) !important;
+        /* Reset transforms */
+    }
+
+    .project-text {
+        padding-left: 0;
+    }
+
+    .project-title {
+        font-size: 2.2rem;
+    }
+
+    .project-desc {
+        font-size: 1rem;
+    }
+}
+
+/* 480px - Mobile Landscape */
+@media (max-width: 480px) {
+    .projects-section {
+        border-radius: 20px;
+        padding: 3rem 0;
+    }
+
+    .projects-heading {
+        width: 92%;
+        margin-bottom: 3rem;
+    }
+
+    .projects-main {
+        font-size: 2rem;
+    }
+
+    .projects-sub {
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+    }
+
+    .projects-list {
+        width: 92%;
+        gap: 3rem;
+    }
+
+    .project-title {
+        font-size: 1.8rem;
+    }
+
+    .project-desc {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .project-tag,
+    .project-link {
+        font-size: 1rem;
+    }
+}
+
+/* 375px - Mobile Portrait */
+@media (max-width: 375px) {
+    .projects-section {
+        border-radius: 15px;
+        padding: 2.5rem 0;
+    }
+
+    .projects-heading {
+        width: 94%;
+        margin-bottom: 2.5rem;
+    }
+
+    .projects-main {
+        font-size: 1.8rem;
+    }
+
+    .projects-list {
+        width: 94%;
+        gap: 2.5rem;
+        padding: 0 15px;
+    }
+
+    .project-title {
+        font-size: 1.6rem;
+    }
+
+    .project-desc {
+        font-size: 0.9rem;
+    }
+}

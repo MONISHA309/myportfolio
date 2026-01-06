@@ -1,0 +1,336 @@
+/* WRAPPER */
+.eduAltWrapper {
+  width: 100%;
+  background: #0c0c0c;
+  padding: 6rem 0 0 0;
+  position: relative;
+  color: #d6c1a0;
+  font-family: "Poppins", sans-serif;
+}
+
+/* MAIN TITLE */
+.eduAltMainTitle {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 4rem;
+  color: #fff;
+}
+
+/* TIMELINE CONTAINER */
+.eduAltBoxContainer {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* TIMELINE VERTICAL LINE (CENTER) */
+.eduAltBoxContainer::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #d1b48c;
+  transform: translateX(-50%);
+  border-radius: 10px;
+}
+
+/* BOX ROW */
+.eduAltBoxRow {
+  display: flex;
+  margin-bottom: 4rem;
+  position: relative;
+  width: 100%;
+}
+
+/* ALTERNATE LEFT/RIGHT POSITIONING */
+.eduAltBoxRow:nth-child(odd) {
+  justify-content: flex-start;
+}
+
+.eduAltBoxRow:nth-child(even) {
+  justify-content: flex-end;
+}
+
+/* TIMELINE CIRCLE */
+.eduAltBoxRow::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+  background: #0c0c0c;
+  border: 4px solid #d1b48c;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+/* BOX/CARD */
+.eduAltCard {
+  width: 45%;
+  padding: 2rem;
+  background: #141313;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #e6d3b1;
+  opacity: 0;
+  transform: translateY(40px);
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* CONNECTOR ARROW (DESKTOP ONLY) */
+.eduAltCard::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+  background: #141313;
+  transform: translateY(-50%) rotate(45deg);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  z-index: 1;
+}
+
+/* LEFT BOXES - ARROW ON RIGHT */
+.eduAltBoxRow:nth-child(odd) .eduAltCard::before {
+  right: -10px;
+  border-left: none;
+  border-bottom: none;
+}
+
+/* RIGHT BOXES - ARROW ON LEFT */
+.eduAltBoxRow:nth-child(even) .eduAltCard::before {
+  left: -10px;
+  border-right: none;
+  border-top: none;
+}
+
+/* CONTENT STYLING */
+.eduAltHeading {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.eduAltRatingRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.4rem 0 0.8rem 0;
+}
+
+.eduAltRatingValue {
+  font-size: 1rem;
+  color: #d1b48c;
+  font-weight: 600;
+}
+
+.eduAltUniversity {
+  font-size: 1rem;
+  color: #b9a68d;
+  margin-bottom: 0.8rem;
+  margin-top: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.eduAltUniversity::before {
+  content: '🏛️';
+  font-size: 0.9rem;
+}
+
+.eduAltDescription {
+  font-size: 0.95rem;
+  opacity: 0.85;
+  line-height: 1.5;
+}
+
+/* FADE UP ANIMATION */
+.eduAltFade {
+  animation: eduAltFadeUp 0.7s ease forwards;
+}
+
+@keyframes eduAltFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========== RESPONSIVE BREAKPOINTS ========== */
+
+/* 1024px - Tablet Landscape */
+@media (max-width: 1024px) {
+  .eduAltWrapper {
+    padding: 5rem 0 0 0;
+  }
+
+  .eduAltMainTitle {
+    font-size: 2.8rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .eduAltBoxContainer::before {
+    left: 30px;
+    /* Move line to left */
+  }
+
+  .eduAltBoxRow::before {
+    left: 30px;
+    /* Move circle to left */
+  }
+
+  .eduAltBoxRow {
+    justify-content: flex-start !important;
+    /* All boxes on left */
+    margin-bottom: 3rem;
+  }
+
+  .eduAltCard {
+    width: calc(100% - 60px);
+    margin-left: 60px;
+    /* Space for line and circle */
+  }
+
+  /* Arrow on right for all boxes */
+  .eduAltCard::before {
+    left: -10px !important;
+    right: auto !important;
+    border-right: none;
+    border-top: none;
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
+}
+
+/* 768px - Tablet Portrait */
+@media (max-width: 768px) {
+  .eduAltWrapper {
+    padding: 4rem 0 0 0;
+  }
+
+  .eduAltMainTitle {
+    font-size: 2.4rem;
+    margin-bottom: 3rem;
+  }
+
+  .eduAltBoxContainer {
+    padding: 0 15px;
+  }
+
+  .eduAltBoxContainer::before {
+    left: 25px;
+  }
+
+  .eduAltBoxRow::before {
+    left: 25px;
+  }
+
+  .eduAltCard {
+    width: calc(100% - 50px);
+    margin-left: 50px;
+    padding: 1.6rem;
+  }
+
+  .eduAltHeading {
+    font-size: 1.3rem;
+  }
+
+  .eduAltDescription {
+    font-size: 0.9rem;
+  }
+}
+
+/* 480px - Mobile Landscape */
+@media (max-width: 480px) {
+  .eduAltWrapper {
+    padding: 3rem 0 0 0;
+  }
+
+  .eduAltMainTitle {
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .eduAltBoxContainer::before {
+    left: 20px;
+  }
+
+  .eduAltBoxRow::before {
+    left: 20px;
+    width: 16px;
+    height: 16px;
+    border-width: 3px;
+  }
+
+  .eduAltCard {
+    width: calc(100% - 40px);
+    margin-left: 40px;
+    padding: 1.4rem;
+    border-radius: 10px;
+  }
+
+  .eduAltHeading {
+    font-size: 1.2rem;
+  }
+
+  .eduAltUniversity {
+    font-size: 0.95rem;
+  }
+
+  .eduAltDescription {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+}
+
+/* 375px - Mobile Portrait */
+@media (max-width: 375px) {
+  .eduAltWrapper {
+    padding: 2.5rem 0;
+  }
+
+  .eduAltMainTitle {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .eduAltBoxContainer {
+    padding: 0 10px;
+  }
+
+  .eduAltBoxContainer::before {
+    left: 15px;
+  }
+
+  .eduAltBoxRow::before {
+    left: 15px;
+  }
+
+  .eduAltCard {
+    width: calc(100% - 30px);
+    margin-left: 30px;
+    padding: 1.2rem;
+    border-radius: 8px;
+  }
+
+  .eduAltHeading {
+    font-size: 1.1rem;
+  }
+
+  .eduAltUniversity {
+    font-size: 0.9rem;
+  }
+
+  .eduAltDescription {
+    font-size: 0.8rem;
+  }
+}
